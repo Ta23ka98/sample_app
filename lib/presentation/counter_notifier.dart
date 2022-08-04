@@ -1,4 +1,4 @@
-import 'package:sample_app/domain/count.dart';
+import 'package:sample_app/domain/count_state/count.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final counterProvider = StateNotifierProvider<CounterNotifier, Count>(
