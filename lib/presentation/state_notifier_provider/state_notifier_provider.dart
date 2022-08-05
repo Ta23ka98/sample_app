@@ -28,7 +28,7 @@ class TodosNotifier extends StateNotifier<List<Todo>> {
   TodosNotifier() : super([]);
 
   void addTodo(Todo todo) {
-    // state = [...state, todo];
+    state = [...state, todo];
   }
 
   void removeTodo(String todoId) {
@@ -65,7 +65,10 @@ class TodoListView extends ConsumerWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed: () {
+          ref.watch(todosProvider.notifier).addTodo(
+              Todo(id: "id", description: "description", completed: false));
+        },
         child: Icon(Icons.add),
       ),
     );
